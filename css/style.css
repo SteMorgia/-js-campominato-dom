@@ -22,8 +22,8 @@ main {
     padding-top: 100px;
 }
 #grid {
-    width:500px;
-    height: 500px;
+    width:65vh;
+    height: 65vh;
     margin: auto;
     display:flex;
     flex-wrap: wrap;
@@ -36,15 +36,18 @@ main {
     align-items: center;
     justify-content: center;
 }
-.facile.square {
+.clicked {
+    background-color: lightblue;
+}
+.facile .square {
     width: calc(100% / 10);
     height: calc(100% / 10);
 }
-.medio.square {
+.medio .square {
     width: calc(100% / 9);
     height: calc(100% / 9);
 }
-.difficile.square {
+.difficile .square {
     width: calc(100% / 7);
     height: calc(100% / 7);
 }
