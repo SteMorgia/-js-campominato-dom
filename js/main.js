@@ -18,6 +18,11 @@ function playGame () {
     
     let livello = document.getElementById('livelli');
     let difficolta = livello.value;
+    let numeriUsati = [];
+    for (let x = 1; x <= 16; x++) {
+        const bomba = generaBombe(numeriUsati,1,100);
+        numeriUsati.push(bomba);
+    }
     
     
 
@@ -47,14 +52,23 @@ function playGame () {
             gridDom.append(divSquare);
         }
     }
-
-    function generaBombe (min, max) {
-        let myArray = [];
-        for (let x = 0; x < 16; x++) {
-            myArray.push(x);
-        } 
-        return (Math.round(Math.random(max - min) * 100));
+    function creaNumeroCasuale(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
+
+    function generaBombe (listaNumeriUsati, min, max) {
+        let numeroValido = false;
+        let numeroCasualeCreato;
+        while ( numeroValido == false ) {
+            numeroCasuale = creaNumeroCasuale(min, max);
+            if (listaNumeriUsati.includes(numeroCasualeCreato) == false) {
+                numeroValido = true;
+            }
+        }
+        return numeroCasualeCreato;
+    }
+
+    
 }
 
 
